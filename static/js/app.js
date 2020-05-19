@@ -106,13 +106,26 @@ async function getinfo(chooseid) {
         demo_info.append('p').text(`location: ${location}`)
         demo_info.append('p').text(`bbtype: ${bbtype}`)
         demo_info.append('p').text(`wfreq: ${wfreq}`)
+       
+        var wfreqdata = [
+            {
+            
+               domain: { x: [0, 1], y: [0, 1] },
+                value: wfreq,
+                title: { text: "Belly Button Washing Frequency <br>Scrubs per Week"},
+                type: "indicator",
+                mode: "gauge+number",
+      
+            } 
+        ];
 
-    })
-}
+       var layout = { width: 500, height: 500, margin: { t: 0, b: 0 }};
+       
+        Plotly.newPlot('gauge',wfreqdata,layout);
+        
 
+    
+    }
+     )}
 
-
-
-
-
-
+    
